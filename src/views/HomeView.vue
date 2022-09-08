@@ -1,24 +1,21 @@
 <template>
-  <h1>
-    home
-  </h1>
+  <h1>home</h1>
   <h2>
-    {{count}}
+    {{ count }}
+  </h2>
+  <h2>
+    {{ userStore.time }}
   </h2>
   <button @click="increment">increment</button>
 </template>
 <script lang="ts" setup>
-import Log from '@/utils/Log';
-import {ref} from 'vue'
+import useUserStore from "@/store/user";
+import { storeToRefs } from "pinia";
 
-const count = ref(0)
+const userStore = useUserStore();
+const { count } = storeToRefs(userStore);
 
 const increment = () => {
-  count.value++;
-  Log.log(count.value)
-  Log.error(count.value);
-  Log.warn(count.value);
-}
-
+  userStore.increment();
+};
 </script>
-
