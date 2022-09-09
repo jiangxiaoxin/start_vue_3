@@ -1,10 +1,11 @@
 <template>
-  <div style="border: 1px solid red">
+  <div style="border: 1px solid red;" class="color-text">
     <h1>Define-props-1</h1>
     <h2>name:{{ name }}</h2>
     <h2>age: {{ _age }}</h2>
     <h2>address: {{ address }}</h2>
     <h2>time: {{ timeStr }}</h2>
+    <h2>color: {{color}}</h2>
     <button @click="updateTime">update time in son</button>
     <button @click="updateAge">update age in son</button>
   </div>
@@ -36,6 +37,7 @@ const props = defineProps({
     default: "Earth",
   },
   time: Number,
+  color: Number
 });
 
 /**
@@ -84,3 +86,8 @@ defineExpose({
   }
 })
 </script>
+<style scoped>
+  .color-text {
+    color: v-bind(color);
+  }
+</style>
