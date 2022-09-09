@@ -15,7 +15,7 @@
  * https://cn.vuejs.org/guide/typescript/composition-api.html#typing-component-props
  * 官方也推荐用 <script setup> 这种方式来写
  */
-import { computed, defineProps, onUpdated, ref, watch } from "vue";
+import { computed, onUpdated, ref, watch } from "vue";
 import dayjs from "dayjs";
 const props = defineProps({
   name: {
