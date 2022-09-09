@@ -17,7 +17,7 @@
     <AvatarGroup :data="groupData" shape="rect"/>
     <br />
     <br />
-    <AvatarGroup :data="groupData" shape="circle" space="loose"/>
+    <AvatarGroup :data="groupData" shape="circle" space="loose" ref="groupRef"/>
   </div>
 </template>
 
@@ -56,8 +56,11 @@ export default defineComponent({
       },
     ]);
 
+    const groupRef = ref(null)
+
     return {
-      groupData
+      groupData,
+      groupRef
     }
   },
   data() {
@@ -66,6 +69,11 @@ export default defineComponent({
       img: "https://images.unsplash.com/photo-1662529739712-930d83814dac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8&w=1000&q=80",
     };
   },
+
+  mounted() {
+    console.log(this.groupRef);
+    
+  }
 });
 </script>
 <style lang="less" scoped></style>

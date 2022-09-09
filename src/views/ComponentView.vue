@@ -2,8 +2,8 @@
   <div class="component-page">
     <div class="left-c">
       <ul>
-        <li v-for="item in pages" :key="item.title">
-          <RouterLink :to="'/component' + item.route">{{item.title}}</RouterLink>
+        <li v-for="item in pages" :key="item.name">
+          <RouterLink :to="item.path">{{item.name}}</RouterLink>
         </li>
       </ul>
     </div>
@@ -16,6 +16,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { RouterLink, RouterView} from 'vue-router'
+import components from '@/router/components'
 
 export default defineComponent({
   components: {
@@ -24,12 +25,7 @@ export default defineComponent({
   },
   data() {
     return {
-      pages: [
-        {
-          title: 'avatar',
-          route: '/avatar'
-        }
-      ]
+      pages: components
     }
   }
 })
