@@ -22,4 +22,8 @@ npm run build
 
 ## 组件列表
 
-[x] avatar
+[x] Avatar 和 AvatarGroup 组件
+[x] 添加pinia状态管理
+[x] DefineProps几个组件测试如何定义props类型
+[x] HelloWorld 全局注册组件
+[x] HelloVue 纯tsx写的组件
