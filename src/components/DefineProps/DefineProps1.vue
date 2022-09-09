@@ -17,8 +17,13 @@
  */
 import { computed, onUpdated, ref, watch } from "vue";
 import dayjs from "dayjs";
+// 传给defineProps 的参数是原来标准的props写法，defineProps会根据这个props对象做自动的类型推导
 const props = defineProps({
   name: {
+    /**
+     * name属性的类型，必须是 String才对。string则会报错。
+     * 因为在这里，type是name这个对象的一个键，它需要一个对应的值。而string是用来说明类型的，不能当作值在这里使用。
+     */
     type: String,
     default: "define-props",
   },
@@ -70,9 +75,12 @@ const timeStr = computed(() => {
   return dayjs(_time.value).format("YYYY-MM-DD hh:mm:ss");
 });
 
-// onUpdated(() => {
-//   console.log("updated", props);
-//   console.log("_time", _time.value);
-//   console.log("_age", _age.value);
-// });
+defineExpose({
+  _time,
+  ageFromSon: _age,
+  updateBoth: () => {
+    updateTime();
+    updateAge();
+  }
+})
 </script>
