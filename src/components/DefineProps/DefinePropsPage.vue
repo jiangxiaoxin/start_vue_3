@@ -41,17 +41,17 @@ const change1Age = () => {
 const currTimeStr = computed(() => {
   return dayjs(currTime.value).format("YYYY:MM:DD hh-mm:ss");
 });
-const prop1 = ref<Ref>({} as Ref);
-const fTime = ref<Ref>({} as Ref);
+const prop1 = ref<InstanceType<typeof DefineProps1Vue> | null>(null);
+const fTime = ref<HTMLParagraphElement|null>(null);
 
 const showRef1 = () => {
   /**
    * 采用<script setup>方式写的组件，默认是对外封闭的，ref会显示个空空的对象。需要在子组件里用 defineExpose 明确写明要暴露啥出去.
    * 暴露的不光是属性，还可以暴露内部的方法。这样父组件可以访问子组件属性，调用子组件方法
    */
-  console.log("ref", prop1.value);
-  prop1.value.updateBoth();
-  console.log(prop1.value.ageFromSon, prop1.value._time);
+  console.log("ref", prop1?.value);
+  prop1.value?.updateBoth();
+  console.log(prop1.value?.ageFromSon, prop1.value?._time);
 };
 
 const cbkFor2 = (value: AgeType) => {
