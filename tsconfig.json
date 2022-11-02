@@ -6,6 +6,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["element-plus/global"]
     // "lib": ["ES6", "ES2017.String", "DOM"]
   },
 
