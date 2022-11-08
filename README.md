@@ -32,10 +32,7 @@ npm run build
 
 [x] HelloVue 纯tsx写的组件。【一定要添加`@vitejs/plugin-vue-jsx`】
 
-[ ] [ReactiveEffect 怎么用的呀？](#effect)
-
-
-
+[x] [ReactiveEffect 怎么用的呀？](#effect)
 
 
 <a id="effect">effect & activeEffect</a>
@@ -45,4 +42,6 @@ npm run build
 针对 target.key 的依赖者，总是通过先访问一次 target.key 然后再收集到这些依赖。”依赖“就是我们真实写的访问 target.key 的那些方法
 
 target 里的每一个属性 key 都有一个跟自己对应的 dep，dep 就是为了能保存访问 target[key] 的方法，所以哪里调用了 target[key]，也就是“这里”的方法就会被存在 key 对应的 dep 实例中。
+
+[x] 高级筛选。每次添加一条，选各种条件。条件提前配置好。
 
